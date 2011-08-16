@@ -1,0 +1,26 @@
+Source: linux
+Section: kernel
+Priority: extra
+Maintainer: Carl Fürstenberg <carl@excito.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.2
+Homepage: http://kernel.org
+
+Package: bubba-kernel
+Architecture: powerpc
+Provides: bubba-modules
+Conflicts: bubba-modules
+Replaces: bubba-modules
+Depends: ${misc:Depends}
+Description: The linux kernel for the Excito Bubba|2 platform
+ Contains the linux kernel modified to fit on the Bubba|2 platform
+
+Package: bubba3-kernel
+Architecture: armel
+Provides: bubba3-modules
+Conflicts: bubba3-modules
+Replaces: bubba3-modules
+Depends: ${misc:Depends}
+Description: The linux kernel for the Excito B3 platform
+ Contains the linux kernel modified to fit on the B3 platform
+
