@@ -1,3 +1,9 @@
+linux (1:2.6.39.4-3) unstable; urgency=low
+
+  * Add device tree files for Bubba|2
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 18 Aug 2011 17:50:03 +0200
+
 linux (1:2.6.39.4-2) unstable; urgency=low
 
   * Increase epoch due to previous packages has epochs

@@ -48,6 +48,10 @@ define REAL_VERSION
 $(shell cat $(DIR)/include/config/kernel.release)
 endef
 
+define device_tree_compile
+dtc -b 0 -V 17 -R 4 -S 0x3000 -I dts -O dtb -f $(strip $(1)) > $(addsuffix .dtb,$(basename $(strip $(1))))
+endef
+
 override_dh_auto_configure: DIR=$(BUILD_DIR)/build-$(DEB_HOST_GNU_TYPE)
 override_dh_auto_configure:
 	rm -rf '$(SOURCE_DIR)'
@@ -76,14 +80,22 @@ override_dh_auto_install:
 	cp '$(DIR)'/System.map $(PACKAGE_DIR)/boot/System.map-$(call REAL_VERSION)
 	find $(PACKAGE_DIR)/lib/modules/$(call REAL_VERSION)/ -mindepth 1 -maxdepth 1 \! -name kernel \! -name modules.order -exec rm {} \+
 	rm $(PACKAGE_DIR)/lib/firmware -rf	
+ifeq ($(DEB_HOST_ARCH),powerpc)
+	cp debian/dts/*.dtb debian/$(PACKAGE)/boot
+endif
 
 override_dh_auto_build: DIR=$(BUILD_DIR)/build-$(DEB_HOST_GNU_TYPE)
 override_dh_auto_build:
 	+$(MAKE_CLEAN) -C '$(SOURCE_DIR)' O='$(CURDIR)/$(DIR)'
 	+$(MAKE_CLEAN) -C '$(SOURCE_DIR)' O='$(CURDIR)/$(DIR)' uImage
+ifeq ($(DEB_HOST_ARCH),powerpc)
+	$(call device_tree_compile, debian/dts/bubba.dts)
+	$(call device_tree_compile, debian/dts/8313E21.dts)
+endif
 
 override_dh_clean:
 	rm -rf '$(BUILD_DIR)';
+	rm -f debian/dts/*.dtb
 
 override_dh_auto_clean:
 	rm -rf '$(BUILD_DIR)';

@@ -2,7 +2,7 @@ Source: linux
 Section: kernel
 Priority: extra
 Maintainer: Carl Fürstenberg <carl@excito.com>
-Build-Depends: debhelper (>= 8.0.0)
+Build-Depends: debhelper (>= 8.0.0), device-tree-compiler
 Standards-Version: 3.9.2
 Homepage: http://kernel.org
 
