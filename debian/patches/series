@@ -1,9 +1,8 @@
-0001-Settings-for-marvell-88e1116.patch
-0002-Marvell-reverse-led-fix.patch
-0003-Excito-B3-config.patch
-0004-Ath-regd-optional.patch
-0005-vsc8601_and_clockskewfix.patch
-0006-Excito-Bubba-2-config.patch
-0007-Debian-adapted-version-handling.patch
-0008-Enable-usage-of-.kernelvariables.patch
-0009-testing-minimzed-ppc-config.patch
+0001-Debian-adapted-version-handling.patch
+0002-Enable-usage-of-.kernelvariables.patch
+0003-Settings-for-marvell-88e1116.patch
+0004-Marvell-reverse-led-fix.patch
+0005-Excito-B3-config.patch
+0006-Ath-regd-optional.patch
+0007-vsc8601_and_clockskewfix.patch
+0008-Excito-Bubba-2-config.patch

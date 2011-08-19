@@ -3,27 +3,27 @@ Date: Tue, 16 Aug 2011 15:05:23 +0200
 Subject: Excito Bubba|2 config
 
 ---
- arch/powerpc/configs/bubbatwo_defconfig | 2936 +++++++++++++++++++++++++++++++
+ arch/powerpc/configs/bubbatwo_defconfig | 2928 +++++++++++++++++++++++++++++++
  arch/powerpc/platforms/83xx/Kconfig     |    6 +
  arch/powerpc/platforms/83xx/Makefile    |    1 +
  arch/powerpc/platforms/83xx/bubbatwo.c  |  496 ++++++
  arch/powerpc/platforms/83xx/mpc83xx.h   |   55 +
  arch/powerpc/platforms/83xx/usb.c       |    2 +-
  drivers/rtc/rtc-isl1208.c               |   15 +-
- 7 files changed, 3506 insertions(+), 5 deletions(-)
+ 7 files changed, 3498 insertions(+), 5 deletions(-)
  create mode 100644 arch/powerpc/configs/bubbatwo_defconfig
  create mode 100644 arch/powerpc/platforms/83xx/bubbatwo.c
 
 diff --git a/arch/powerpc/configs/bubbatwo_defconfig b/arch/powerpc/configs/bubbatwo_defconfig
 new file mode 100644
-index 0000000..11034c5
+index 0000000..eace38d
 --- /dev/null
 +++ b/arch/powerpc/configs/bubbatwo_defconfig
-@@ -0,0 +1,2936 @@
+@@ -0,0 +1,2928 @@
 +#
 +# Automatically generated make config: don't edit
 +# Linux/powerpc 2.6.39.4 Kernel Configuration
-+# Thu Aug 18 18:24:23 2011
++# Thu Aug 18 20:57:33 2011
 +#
 +# CONFIG_PPC64 is not set
 +
@@ -730,7 +730,7 @@ index 0000000..11034c5
 +# CONFIG_CFG80211_REG_DEBUG is not set
 +CONFIG_CFG80211_DEFAULT_PS=y
 +# CONFIG_CFG80211_INTERNAL_REGDB is not set
-+CONFIG_CFG80211_WEXT=y
++# CONFIG_CFG80211_WEXT is not set
 +# CONFIG_WIRELESS_EXT_SYSFS is not set
 +CONFIG_LIB80211=m
 +CONFIG_LIB80211_CRYPT_WEP=m
@@ -1241,19 +1241,12 @@ index 0000000..11034c5
 +CONFIG_IPW2100=m
 +CONFIG_IPW2100_MONITOR=y
 +# CONFIG_IPW2100_DEBUG is not set
-+CONFIG_IPW2200=m
-+CONFIG_IPW2200_MONITOR=y
-+# CONFIG_IPW2200_RADIOTAP is not set
-+# CONFIG_IPW2200_PROMISCUOUS is not set
-+CONFIG_IPW2200_QOS=y
-+# CONFIG_IPW2200_DEBUG is not set
 +CONFIG_LIBIPW=m
 +# CONFIG_LIBIPW_DEBUG is not set
 +# CONFIG_IWLAGN is not set
 +# CONFIG_IWL4965 is not set
 +# CONFIG_IWL3945 is not set
 +# CONFIG_LIBERTAS is not set
-+# CONFIG_HERMES is not set
 +# CONFIG_P54_COMMON is not set
 +CONFIG_RT2X00=m
 +CONFIG_RT2400PCI=m
@@ -2662,12 +2655,11 @@ index 0000000..11034c5
 +# CONFIG_SYSV_FS is not set
 +# CONFIG_UFS_FS is not set
 +CONFIG_NETWORK_FILESYSTEMS=y
-+CONFIG_NFS_FS=y
++CONFIG_NFS_FS=m
 +CONFIG_NFS_V3=y
 +# CONFIG_NFS_V3_ACL is not set
 +CONFIG_NFS_V4=y
 +# CONFIG_NFS_V4_1 is not set
-+CONFIG_ROOT_NFS=y
 +# CONFIG_NFS_USE_LEGACY_DNS is not set
 +CONFIG_NFS_USE_KERNEL_DNS=y
 +# CONFIG_NFS_USE_NEW_IDMAPPER is not set
@@ -2677,12 +2669,12 @@ index 0000000..11034c5
 +CONFIG_NFSD_V3=y
 +CONFIG_NFSD_V3_ACL=y
 +# CONFIG_NFSD_V4 is not set
-+CONFIG_LOCKD=y
++CONFIG_LOCKD=m
 +CONFIG_LOCKD_V4=y
 +CONFIG_NFS_ACL_SUPPORT=m
 +CONFIG_NFS_COMMON=y
-+CONFIG_SUNRPC=y
-+CONFIG_SUNRPC_GSS=y
++CONFIG_SUNRPC=m
++CONFIG_SUNRPC_GSS=m
 +CONFIG_RPCSEC_GSS_KRB5=m
 +# CONFIG_CEPH_FS is not set
 +CONFIG_CIFS=m
@@ -2885,7 +2877,7 @@ index 0000000..11034c5
 +#
 +# Block modes
 +#
-+CONFIG_CRYPTO_CBC=y
++CONFIG_CRYPTO_CBC=m
 +CONFIG_CRYPTO_CTR=m
 +CONFIG_CRYPTO_CTS=m
 +CONFIG_CRYPTO_ECB=m
@@ -2906,7 +2898,7 @@ index 0000000..11034c5
 +CONFIG_CRYPTO_CRC32C=m
 +CONFIG_CRYPTO_GHASH=m
 +CONFIG_CRYPTO_MD4=m
-+CONFIG_CRYPTO_MD5=y
++CONFIG_CRYPTO_MD5=m
 +CONFIG_CRYPTO_MICHAEL_MIC=m
 +CONFIG_CRYPTO_RMD128=m
 +CONFIG_CRYPTO_RMD160=m
@@ -2928,7 +2920,7 @@ index 0000000..11034c5
 +CONFIG_CRYPTO_CAMELLIA=m
 +CONFIG_CRYPTO_CAST5=m
 +CONFIG_CRYPTO_CAST6=m
-+CONFIG_CRYPTO_DES=y
++CONFIG_CRYPTO_DES=m
 +CONFIG_CRYPTO_FCRYPT=m
 +CONFIG_CRYPTO_KHAZAD=m
 +# CONFIG_CRYPTO_SALSA20 is not set
@@ -2953,7 +2945,7 @@ index 0000000..11034c5
 +# CONFIG_CRYPTO_USER_API_SKCIPHER is not set
 +CONFIG_CRYPTO_HW=y
 +# CONFIG_CRYPTO_DEV_HIFN_795X is not set
-+CONFIG_CRYPTO_DEV_TALITOS=y
++CONFIG_CRYPTO_DEV_TALITOS=m
 +# CONFIG_PPC_CLOCK is not set
 +# CONFIG_VIRTUALIZATION is not set
 diff --git a/arch/powerpc/platforms/83xx/Kconfig b/arch/powerpc/platforms/83xx/Kconfig
