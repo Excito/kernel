@@ -1,0 +1,43 @@
+From: =?UTF-8?q?Carl=20F=C3=BCrstenberg?= <carl@excito.com>
+Date: Fri, 21 Oct 2011 15:39:12 +0200
+Subject: Add ebtables support
+
+---
+ arch/arm/configs/bubba3_defconfig |   23 ++++++++++++++++++++++-
+ 1 files changed, 22 insertions(+), 1 deletions(-)
+
+diff --git a/arch/arm/configs/bubba3_defconfig b/arch/arm/configs/bubba3_defconfig
+index 7ee4851..81b1513 100644
+--- a/arch/arm/configs/bubba3_defconfig
++++ b/arch/arm/configs/bubba3_defconfig
+@@ -637,7 +637,28 @@ CONFIG_IP6_NF_FILTER=m
+ CONFIG_IP6_NF_TARGET_REJECT=m
+ CONFIG_IP6_NF_MANGLE=m
+ CONFIG_IP6_NF_RAW=m
+-# CONFIG_BRIDGE_NF_EBTABLES is not set
++CONFIG_BRIDGE_NF_EBTABLES=m
++CONFIG_BRIDGE_EBT_BROUTE=m
++CONFIG_BRIDGE_EBT_T_FILTER=m
++CONFIG_BRIDGE_EBT_T_NAT=m
++CONFIG_BRIDGE_EBT_802_3=m
++CONFIG_BRIDGE_EBT_AMONG=m
++CONFIG_BRIDGE_EBT_ARP=m
++CONFIG_BRIDGE_EBT_IP=m
++CONFIG_BRIDGE_EBT_IP6=m
++CONFIG_BRIDGE_EBT_LIMIT=m
++CONFIG_BRIDGE_EBT_MARK=m
++CONFIG_BRIDGE_EBT_PKTTYPE=m
++CONFIG_BRIDGE_EBT_STP=m
++CONFIG_BRIDGE_EBT_VLAN=m
++CONFIG_BRIDGE_EBT_ARPREPLY=m
++CONFIG_BRIDGE_EBT_DNAT=m
++CONFIG_BRIDGE_EBT_MARK_T=m
++CONFIG_BRIDGE_EBT_REDIRECT=m
++CONFIG_BRIDGE_EBT_SNAT=m
++CONFIG_BRIDGE_EBT_LOG=m
++# CONFIG_BRIDGE_EBT_ULOG is not set
++CONFIG_BRIDGE_EBT_NFLOG=m
+ # CONFIG_IP_DCCP is not set
+ # CONFIG_IP_SCTP is not set
+ # CONFIG_RDS is not set
+-- 

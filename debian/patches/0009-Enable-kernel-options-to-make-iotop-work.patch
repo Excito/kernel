@@ -1,0 +1,27 @@
+From: =?UTF-8?q?Carl=20F=C3=BCrstenberg?= <carl@excito.com>
+Date: Fri, 21 Oct 2011 15:33:41 +0200
+Subject: Enable kernel options to make iotop work
+
+Enable options CONFIG_TASKSTATS, CONFIG_TASK_DELAY_ACCT, and
+CONFIG_TASK_IO_ACCOUNTING
+---
+ arch/arm/configs/bubba3_defconfig |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+diff --git a/arch/arm/configs/bubba3_defconfig b/arch/arm/configs/bubba3_defconfig
+index 61862e0..c8d02b4 100644
+--- a/arch/arm/configs/bubba3_defconfig
++++ b/arch/arm/configs/bubba3_defconfig
+@@ -50,7 +50,10 @@ CONFIG_POSIX_MQUEUE=y
+ CONFIG_POSIX_MQUEUE_SYSCTL=y
+ # CONFIG_BSD_PROCESS_ACCT is not set
+ # CONFIG_FHANDLE is not set
+-# CONFIG_TASKSTATS is not set
++CONFIG_TASKSTATS=y
++CONFIG_TASK_DELAY_ACCT=y
++CONFIG_TASK_XACCT=y
++CONFIG_TASK_IO_ACCOUNTING=y
+ # CONFIG_AUDIT is not set
+ CONFIG_HAVE_GENERIC_HARDIRQS=y
+ 
+-- 

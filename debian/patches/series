@@ -6,3 +6,8 @@
 0006-Ath-regd-optional.patch
 0007-vsc8601_and_clockskewfix.patch
 0008-Excito-Bubba-2-config.patch
+0009-Enable-kernel-options-to-make-iotop-work.patch
+0010-Enable-missing-modules-to-make-Strongswan-work.patch
+0011-Add-eCrypt-support.patch
+0012-Add-ebtables-support.patch
+0013-General-silentoldconfig-update-of-kernel-config.patch
