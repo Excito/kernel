@@ -1,3 +1,10 @@
+linux (1:2.6.39.4-5) unstable; urgency=low
+
+  * update b3 kernel configuration patches
+  * enable parallel build and rename package for armel
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 24 Oct 2011 14:38:15 +0200
+
 linux (1:2.6.39.4-4) unstable; urgency=low
 
   * update Bubba|2 config
