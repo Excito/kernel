@@ -33,7 +33,7 @@ setup_env += DISTRIBUTION_OFFICIAL_BUILD=1 DISTRIBUTION_UPLOADER=$(UPLOADER) DIS
 MAKE_CLEAN = $(setup_env) $(MAKE)
 
 ifeq ($(DEB_HOST_ARCH),armel)
-	PACKAGE=bubba3-kernel
+	PACKAGE=bubba-kernel
 	CONFIG=bubba3_defconfig
 else ifeq ($(DEB_HOST_ARCH),powerpc)
 	PACKAGE=bubba-kernel
@@ -42,7 +42,7 @@ endif
 
 PACKAGE_DIR=debian/$(PACKAGE)
 %:
-	+dh $@
+	+dh $@ --parallel
 
 define REAL_VERSION
 $(shell cat $(DIR)/include/config/kernel.release)
@@ -75,6 +75,7 @@ endif
 override_dh_auto_install:  DIR=$(BUILD_DIR)/build-$(DEB_HOST_GNU_TYPE)
 override_dh_auto_install:
 	+$(MAKE_CLEAN) -C $(DIR) INSTALL_MOD_PATH='$(CURDIR)/$(PACKAGE_DIR)' INSTALL_MOD_STRIP=1 modules_install
+	mkdir -p debian/$(PACKAGE)/boot
 	cp '$(DIR)'/arch/$(DEB_HOST_ARCH_CPU)/boot/uImage debian/$(PACKAGE)/boot
 	cp '$(DIR)'/.config $(PACKAGE_DIR)/boot/config-$(call REAL_VERSION)
 	cp '$(DIR)'/System.map $(PACKAGE_DIR)/boot/System.map-$(call REAL_VERSION)
