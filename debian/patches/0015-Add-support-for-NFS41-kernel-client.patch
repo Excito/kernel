@@ -1,0 +1,23 @@
+From: =?UTF-8?q?Carl=20F=C3=BCrstenberg?= <carl@excito.com>
+Date: Fri, 9 Dec 2011 16:58:33 +0100
+Subject: Add support for NFS41 kernel client
+
+---
+ arch/arm/configs/bubba3_defconfig |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+diff --git a/arch/arm/configs/bubba3_defconfig b/arch/arm/configs/bubba3_defconfig
+index 3e8358f..bb4c757 100644
+--- a/arch/arm/configs/bubba3_defconfig
++++ b/arch/arm/configs/bubba3_defconfig
+@@ -2588,7 +2588,8 @@ CONFIG_NFS_FS=y
+ CONFIG_NFS_V3=y
+ # CONFIG_NFS_V3_ACL is not set
+ CONFIG_NFS_V4=y
+-# CONFIG_NFS_V4_1 is not set
++CONFIG_NFS_V4_1=y
++CONFIG_PNFS_FILE_LAYOUT=y
+ CONFIG_ROOT_NFS=y
+ CONFIG_NFS_FSCACHE=y
+ # CONFIG_NFS_USE_LEGACY_DNS is not set
+-- 

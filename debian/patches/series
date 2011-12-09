@@ -11,3 +11,5 @@
 0011-Add-eCrypt-support.patch
 0012-Add-ebtables-support.patch
 0013-General-silentoldconfig-update-of-kernel-config.patch
+0014-Adding-support-for-NFS4-kernel-server.patch
+0015-Add-support-for-NFS41-kernel-client.patch

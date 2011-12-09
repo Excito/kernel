@@ -1,0 +1,31 @@
+From: =?UTF-8?q?Carl=20F=C3=BCrstenberg?= <carl@excito.com>
+Date: Fri, 9 Dec 2011 16:58:12 +0100
+Subject: Adding support for NFS4 kernel server
+
+---
+ arch/arm/configs/bubba3_defconfig |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/configs/bubba3_defconfig b/arch/arm/configs/bubba3_defconfig
+index 802b2e3..3e8358f 100644
+--- a/arch/arm/configs/bubba3_defconfig
++++ b/arch/arm/configs/bubba3_defconfig
+@@ -1,7 +1,7 @@
+ #
+ # Automatically generated make config: don't edit
+ # Linux/arm 2.6.39.4 Kernel Configuration
+-# Fri Oct 21 15:30:07 2011
++# Fri Dec  9 16:56:45 2011
+ #
+ CONFIG_ARM=y
+ CONFIG_SYS_SUPPORTS_APM_EMULATION=y
+@@ -2599,7 +2599,7 @@ CONFIG_NFSD_DEPRECATED=y
+ CONFIG_NFSD_V2_ACL=y
+ CONFIG_NFSD_V3=y
+ CONFIG_NFSD_V3_ACL=y
+-# CONFIG_NFSD_V4 is not set
++CONFIG_NFSD_V4=y
+ CONFIG_LOCKD=y
+ CONFIG_LOCKD_V4=y
+ CONFIG_NFS_ACL_SUPPORT=y
+-- 
