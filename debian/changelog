@@ -1,3 +1,10 @@
+linux (1:2.6.39.4-6) vincent hugo; urgency=low
+
+  * Adding patches for nfs4 support
+  * fix conflicts
+
+ -- Carl Fürstenberg <azatoth@gmail.com>  Wed, 21 Dec 2011 16:01:32 +0100
+
 linux (1:2.6.39.4-5) unstable; urgency=low
 
   * update b3 kernel configuration patches
