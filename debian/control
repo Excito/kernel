@@ -8,9 +8,9 @@ Homepage: http://kernel.org
 
 Package: bubba-kernel
 Architecture: powerpc armel
-Provides: bubba-modules, bubba3-kernel
-Conflicts: bubba-modules, bubba3-kernel
-Replaces: bubba-modules, bubba3-kernel
+Provides: bubba-modules, bubba3-modules, bubba3-kernel
+Conflicts: bubba-modules, bubba3-modules, bubba3-kernel
+Replaces: bubba-modules, bubba3-modules, bubba3-kernel
 Depends: ${misc:Depends}
 Description: The linux kernel for the Excito platforms
  Contains the linux kernel modified to fit on the Excito platforms

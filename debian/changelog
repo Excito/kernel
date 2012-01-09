@@ -1,3 +1,9 @@
+linux (1:2.6.39.4-7) vincent hugo; urgency=low
+
+  * add bubba3-modules for conflicts et al
+
+ -- Carl Fürstenberg <azatoth@gmail.com>  Mon, 09 Jan 2012 15:47:07 +0100
+
 linux (1:2.6.39.4-6) vincent hugo; urgency=low
 
   * Adding patches for nfs4 support
