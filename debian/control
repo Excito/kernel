@@ -6,11 +6,11 @@ Build-Depends: debhelper (>= 8.0.0), device-tree-compiler
 Standards-Version: 3.9.2
 Homepage: http://kernel.org
 
-Package: bubba-kernel
+Package: bubba3-kernel
 Architecture: powerpc armel
-Provides: bubba-modules, bubba3-modules, bubba3-kernel
-Conflicts: bubba-modules, bubba3-modules, bubba3-kernel
-Replaces: bubba-modules, bubba3-modules, bubba3-kernel
+Provides: bubba-modules, bubba3-modules, bubba-kernel
+Conflicts: bubba-modules, bubba3-modules, bubba-kernel
+Replaces: bubba-modules, bubba3-modules, bubba-kernel
 Depends: ${misc:Depends}
 Description: The linux kernel for the Excito platforms
  Contains the linux kernel modified to fit on the Excito platforms

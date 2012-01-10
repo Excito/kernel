@@ -33,10 +33,10 @@ setup_env += DISTRIBUTION_OFFICIAL_BUILD=1 DISTRIBUTION_UPLOADER=$(UPLOADER) DIS
 MAKE_CLEAN = $(setup_env) $(MAKE)
 
 ifeq ($(DEB_HOST_ARCH),armel)
-	PACKAGE=bubba-kernel
+	PACKAGE=bubba3-kernel
 	CONFIG=bubba3_defconfig
 else ifeq ($(DEB_HOST_ARCH),powerpc)
-	PACKAGE=bubba-kernel
+	PACKAGE=bubba3-kernel
 	CONFIG=bubbatwo_defconfig
 endif
 

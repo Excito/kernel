@@ -1,3 +1,9 @@
+linux (1:2.6.39.4-8) vincent hugo; urgency=low
+
+  * Remame package to bubba3-kernel to simplify migration
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 10 Jan 2012 14:18:40 +0100
+
 linux (1:2.6.39.4-7) vincent hugo; urgency=low
 
   * add bubba3-modules for conflicts et al
