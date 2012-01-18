@@ -1,3 +1,9 @@
+linux (1:2.6.39.4-9) vincent hugo; urgency=low
+
+  * Adding postinst with user restart message (Closes: #1832)
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 18 Jan 2012 14:06:17 +0100
+
 linux (1:2.6.39.4-8) vincent hugo; urgency=low
 
   * Remame package to bubba3-kernel to simplify migration
