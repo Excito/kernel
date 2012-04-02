@@ -1,21 +1,21 @@
 From: =?UTF-8?q?Carl=20F=C3=BCrstenberg?= <carl@excito.com>
-Date: Fri, 9 Dec 2011 16:58:33 +0100
-Subject: Add support for NFS41 kernel client
+Date: Mon, 2 Apr 2012 18:52:21 +0200
+Subject: Add CONFIG_USB_HIDDEV
 
 ---
  arch/arm/configs/bubba3_defconfig |    1 +
  1 files changed, 1 insertions(+), 0 deletions(-)
 
 diff --git a/arch/arm/configs/bubba3_defconfig b/arch/arm/configs/bubba3_defconfig
-index 0549a86..3ba6438 100644
+index 3ba6438..63039a8 100644
 --- a/arch/arm/configs/bubba3_defconfig
 +++ b/arch/arm/configs/bubba3_defconfig
-@@ -606,6 +606,7 @@ CONFIG_HFSPLUS_FS=m
- CONFIG_NFS_FS=y
- CONFIG_NFS_V3=y
- CONFIG_NFS_V4=y
-+CONFIG_NFS_V4_1=y
- CONFIG_ROOT_NFS=y
- CONFIG_NFS_FSCACHE=y
- CONFIG_NFSD=y
+@@ -449,6 +449,7 @@ CONFIG_SND_SEQUENCER_OSS=y
+ # CONFIG_SND_SPI is not set
+ CONFIG_SND_USB_AUDIO=m
+ CONFIG_HIDRAW=y
++CONFIG_USB_HIDDEV=y
+ CONFIG_HID_3M_PCT=m
+ CONFIG_HID_A4TECH=m
+ CONFIG_HID_APPLE=m
 -- 

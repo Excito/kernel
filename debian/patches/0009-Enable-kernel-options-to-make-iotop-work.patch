@@ -5,23 +5,30 @@ Subject: Enable kernel options to make iotop work
 Enable options CONFIG_TASKSTATS, CONFIG_TASK_DELAY_ACCT, and
 CONFIG_TASK_IO_ACCOUNTING
 ---
- arch/arm/configs/bubba3_defconfig |    5 ++++-
- 1 files changed, 4 insertions(+), 1 deletions(-)
+ arch/arm/configs/bubba3_defconfig |    5 +++++
+ 1 files changed, 5 insertions(+), 0 deletions(-)
 
 diff --git a/arch/arm/configs/bubba3_defconfig b/arch/arm/configs/bubba3_defconfig
-index 61862e0..c8d02b4 100644
+index 141f381..a85a07b 100644
 --- a/arch/arm/configs/bubba3_defconfig
 +++ b/arch/arm/configs/bubba3_defconfig
-@@ -50,7 +50,10 @@ CONFIG_POSIX_MQUEUE=y
- CONFIG_POSIX_MQUEUE_SYSCTL=y
- # CONFIG_BSD_PROCESS_ACCT is not set
- # CONFIG_FHANDLE is not set
--# CONFIG_TASKSTATS is not set
+@@ -1,6 +1,10 @@
+ CONFIG_EXPERIMENTAL=y
+ CONFIG_SYSVIPC=y
+ CONFIG_POSIX_MQUEUE=y
 +CONFIG_TASKSTATS=y
 +CONFIG_TASK_DELAY_ACCT=y
 +CONFIG_TASK_XACCT=y
 +CONFIG_TASK_IO_ACCOUNTING=y
- # CONFIG_AUDIT is not set
- CONFIG_HAVE_GENERIC_HARDIRQS=y
- 
+ CONFIG_IKCONFIG=y
+ CONFIG_IKCONFIG_PROC=y
+ CONFIG_LOG_BUF_SHIFT=15
+@@ -239,6 +243,7 @@ CONFIG_USB_ZD1201=m
+ CONFIG_USB_NET_RNDIS_WLAN=m
+ CONFIG_RTL8187=m
+ CONFIG_ATH_COMMON=m
++CONFIG_ATH_USER_REGD=y
+ CONFIG_ATH5K=m
+ CONFIG_ATH9K=m
+ CONFIG_ATH9K_HTC=m
 -- 

@@ -3,18 +3,17 @@ Date: Fri, 21 Oct 2011 15:39:12 +0200
 Subject: Add ebtables support
 
 ---
- arch/arm/configs/bubba3_defconfig |   23 ++++++++++++++++++++++-
- 1 files changed, 22 insertions(+), 1 deletions(-)
+ arch/arm/configs/bubba3_defconfig |   21 +++++++++++++++++++++
+ 1 files changed, 21 insertions(+), 0 deletions(-)
 
 diff --git a/arch/arm/configs/bubba3_defconfig b/arch/arm/configs/bubba3_defconfig
-index 7ee4851..81b1513 100644
+index d53befe..d91141d 100644
 --- a/arch/arm/configs/bubba3_defconfig
 +++ b/arch/arm/configs/bubba3_defconfig
-@@ -637,7 +637,28 @@ CONFIG_IP6_NF_FILTER=m
+@@ -144,6 +144,27 @@ CONFIG_IP6_NF_FILTER=m
  CONFIG_IP6_NF_TARGET_REJECT=m
  CONFIG_IP6_NF_MANGLE=m
  CONFIG_IP6_NF_RAW=m
--# CONFIG_BRIDGE_NF_EBTABLES is not set
 +CONFIG_BRIDGE_NF_EBTABLES=m
 +CONFIG_BRIDGE_EBT_BROUTE=m
 +CONFIG_BRIDGE_EBT_T_FILTER=m
@@ -35,9 +34,8 @@ index 7ee4851..81b1513 100644
 +CONFIG_BRIDGE_EBT_REDIRECT=m
 +CONFIG_BRIDGE_EBT_SNAT=m
 +CONFIG_BRIDGE_EBT_LOG=m
-+# CONFIG_BRIDGE_EBT_ULOG is not set
 +CONFIG_BRIDGE_EBT_NFLOG=m
- # CONFIG_IP_DCCP is not set
- # CONFIG_IP_SCTP is not set
- # CONFIG_RDS is not set
+ CONFIG_ATM=m
+ CONFIG_ATM_CLIP=m
+ CONFIG_ATM_BR2684=m
 -- 

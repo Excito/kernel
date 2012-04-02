@@ -5,27 +5,20 @@ Subject: Enable missing modules to make Strongswan work
 the modules CONFIG_XFRM_USER and CONFIG_NET_KEY needs to be enabled for
 Strongswan support
 ---
- arch/arm/configs/bubba3_defconfig |    5 +++--
- 1 files changed, 3 insertions(+), 2 deletions(-)
+ arch/arm/configs/bubba3_defconfig |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
 
 diff --git a/arch/arm/configs/bubba3_defconfig b/arch/arm/configs/bubba3_defconfig
-index c8d02b4..07043c3 100644
+index a85a07b..f551910 100644
 --- a/arch/arm/configs/bubba3_defconfig
 +++ b/arch/arm/configs/bubba3_defconfig
-@@ -412,12 +412,13 @@ CONFIG_NET=y
+@@ -30,6 +30,8 @@ CONFIG_PM_RUNTIME=y
+ CONFIG_NET=y
  CONFIG_PACKET=y
  CONFIG_UNIX=y
- CONFIG_XFRM=y
--# CONFIG_XFRM_USER is not set
 +CONFIG_XFRM_USER=y
- # CONFIG_XFRM_SUB_POLICY is not set
- # CONFIG_XFRM_MIGRATE is not set
- # CONFIG_XFRM_STATISTICS is not set
- CONFIG_XFRM_IPCOMP=m
--# CONFIG_NET_KEY is not set
 +CONFIG_NET_KEY=y
-+# CONFIG_NET_KEY_MIGRATE is not set
  CONFIG_INET=y
  CONFIG_IP_MULTICAST=y
- # CONFIG_IP_ADVANCED_ROUTER is not set
+ CONFIG_IP_PNP=y
 -- 

@@ -3,20 +3,19 @@ Date: Fri, 21 Oct 2011 15:38:18 +0200
 Subject: Add eCrypt support
 
 ---
- arch/arm/configs/bubba3_defconfig |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ arch/arm/configs/bubba3_defconfig |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
 
 diff --git a/arch/arm/configs/bubba3_defconfig b/arch/arm/configs/bubba3_defconfig
-index 07043c3..7ee4851 100644
+index f551910..d53befe 100644
 --- a/arch/arm/configs/bubba3_defconfig
 +++ b/arch/arm/configs/bubba3_defconfig
-@@ -2543,7 +2543,7 @@ CONFIG_TMPFS=y
- CONFIG_MISC_FILESYSTEMS=y
- # CONFIG_ADFS_FS is not set
- # CONFIG_AFFS_FS is not set
--# CONFIG_ECRYPT_FS is not set
+@@ -580,6 +580,7 @@ CONFIG_FAT_DEFAULT_CODEPAGE=850
+ CONFIG_NTFS_FS=m
+ CONFIG_NTFS_RW=y
+ CONFIG_TMPFS=y
 +CONFIG_ECRYPT_FS=m
  CONFIG_HFS_FS=m
  CONFIG_HFSPLUS_FS=m
- # CONFIG_BEFS_FS is not set
+ CONFIG_NFS_FS=y
 -- 
