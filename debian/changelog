@@ -1,3 +1,9 @@
+linux (1:2.6.39.4-11) vincent; urgency=low
+
+  * Add HDIDEV support 
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 03 Apr 2012 18:32:59 +0300
+
 linux (1:2.6.39.4-10) vincent hugo; urgency=low
 
   * Create header package
