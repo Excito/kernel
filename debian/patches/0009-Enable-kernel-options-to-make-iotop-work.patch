@@ -5,8 +5,9 @@ Subject: Enable kernel options to make iotop work
 Enable options CONFIG_TASKSTATS, CONFIG_TASK_DELAY_ACCT, and
 CONFIG_TASK_IO_ACCOUNTING
 ---
- arch/arm/configs/bubba3_defconfig |    5 +++++
- 1 files changed, 5 insertions(+), 0 deletions(-)
+ arch/arm/configs/bubba3_defconfig       |    5 +++++
+ arch/powerpc/configs/bubbatwo_defconfig |    4 ++++
+ 2 files changed, 9 insertions(+), 0 deletions(-)
 
 diff --git a/arch/arm/configs/bubba3_defconfig b/arch/arm/configs/bubba3_defconfig
 index 141f381..a85a07b 100644
@@ -31,4 +32,19 @@ index 141f381..a85a07b 100644
  CONFIG_ATH5K=m
  CONFIG_ATH9K=m
  CONFIG_ATH9K_HTC=m
+diff --git a/arch/powerpc/configs/bubbatwo_defconfig b/arch/powerpc/configs/bubbatwo_defconfig
+index e5e3218..2bd71cf 100644
+--- a/arch/powerpc/configs/bubbatwo_defconfig
++++ b/arch/powerpc/configs/bubbatwo_defconfig
+@@ -1,6 +1,10 @@
+ CONFIG_EXPERIMENTAL=y
+ CONFIG_SYSVIPC=y
+ CONFIG_POSIX_MQUEUE=y
++CONFIG_TASKSTATS=y
++CONFIG_TASK_DELAY_ACCT=y
++CONFIG_TASK_XACCT=y
++CONFIG_TASK_IO_ACCOUNTING=y
+ CONFIG_IKCONFIG=y
+ CONFIG_IKCONFIG_PROC=y
+ CONFIG_LOG_BUF_SHIFT=14
 -- 
