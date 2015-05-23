@@ -14,9 +14,6 @@ Subject: Excito Bubba|2 config
  create mode 100644 arch/powerpc/configs/bubbatwo_defconfig
  create mode 100644 arch/powerpc/platforms/83xx/bubbatwo.c
 
-diff --git a/arch/powerpc/configs/bubbatwo_defconfig b/arch/powerpc/configs/bubbatwo_defconfig
-new file mode 100644
-index 0000000..e5e3218
 --- /dev/null
 +++ b/arch/powerpc/configs/bubbatwo_defconfig
 @@ -0,0 +1,542 @@
@@ -562,11 +559,9 @@ index 0000000..e5e3218
 +CONFIG_CRYPTO_ZLIB=m
 +CONFIG_CRYPTO_LZO=m
 +CONFIG_CRYPTO_DEV_TALITOS=m
-diff --git a/arch/powerpc/platforms/83xx/Kconfig b/arch/powerpc/platforms/83xx/Kconfig
-index 73f4135..65670be 100644
 --- a/arch/powerpc/platforms/83xx/Kconfig
 +++ b/arch/powerpc/platforms/83xx/Kconfig
-@@ -24,6 +24,12 @@ config MPC831x_RDB
+@@ -24,6 +24,12 @@
  	help
  	  This option enables support for the MPC8313 RDB and MPC8315 RDB boards.
  
@@ -579,11 +574,9 @@ index 73f4135..65670be 100644
  config MPC832x_MDS
  	bool "Freescale MPC832x MDS"
  	select DEFAULT_UIMAGE
-diff --git a/arch/powerpc/platforms/83xx/Makefile b/arch/powerpc/platforms/83xx/Makefile
-index ed95bfc..525a26a 100644
 --- a/arch/powerpc/platforms/83xx/Makefile
 +++ b/arch/powerpc/platforms/83xx/Makefile
-@@ -6,6 +6,7 @@ obj-$(CONFIG_SUSPEND)		+= suspend.o suspend-asm.o
+@@ -6,6 +6,7 @@
  obj-$(CONFIG_MCU_MPC8349EMITX)	+= mcu_mpc8349emitx.o
  obj-$(CONFIG_MPC830x_RDB)	+= mpc830x_rdb.o
  obj-$(CONFIG_MPC831x_RDB)	+= mpc831x_rdb.o
@@ -591,9 +584,6 @@ index ed95bfc..525a26a 100644
  obj-$(CONFIG_MPC832x_RDB)	+= mpc832x_rdb.o
  obj-$(CONFIG_MPC834x_MDS)	+= mpc834x_mds.o
  obj-$(CONFIG_MPC834x_ITX)	+= mpc834x_itx.o
-diff --git a/arch/powerpc/platforms/83xx/bubbatwo.c b/arch/powerpc/platforms/83xx/bubbatwo.c
-new file mode 100644
-index 0000000..2179adb
 --- /dev/null
 +++ b/arch/powerpc/platforms/83xx/bubbatwo.c
 @@ -0,0 +1,496 @@
@@ -705,7 +695,7 @@ index 0000000..2179adb
 +		envp [i++] = "HOME=/";
 +		envp [i++] = "PATH=/sbin:/bin:/usr/sbin:/usr/bin";
 +		printk(KERN_DEBUG "BUBBATWO: Invoking usermodehelper");
-+		ret=call_usermodehelper (argv [0], argv, envp, 0);
++		ret=call_usermodehelper (argv [0], argv, envp, UMH_WAIT_PROC);
 +		kfree (envp);
 +		b2_led_blink(LED_DEFAULT_FREQ);
 +
@@ -1093,8 +1083,6 @@ index 0000000..2179adb
 +/* register init and cleanup functions */
 +module_init(bubbatwo_init);
 +module_exit(bubbatwo_cleanup);
-diff --git a/arch/powerpc/platforms/83xx/mpc83xx.h b/arch/powerpc/platforms/83xx/mpc83xx.h
-index 82a4345..570cd42 100644
 --- a/arch/powerpc/platforms/83xx/mpc83xx.h
 +++ b/arch/powerpc/platforms/83xx/mpc83xx.h
 @@ -48,6 +48,7 @@
@@ -1166,11 +1154,9 @@ index 82a4345..570cd42 100644
  
  /*
   * Declaration for the various functions exported by the
-diff --git a/arch/powerpc/platforms/83xx/usb.c b/arch/powerpc/platforms/83xx/usb.c
-index 2c64164..96b27ec 100644
 --- a/arch/powerpc/platforms/83xx/usb.c
 +++ b/arch/powerpc/platforms/83xx/usb.c
-@@ -184,7 +184,7 @@ int mpc831x_usb_cfg(void)
+@@ -184,7 +184,7 @@
  		if (of_device_is_compatible(immr_node, "fsl,mpc8315-immr"))
  			refsel = CONTROL_REFSEL_24MHZ;
  		else
@@ -1179,11 +1165,9 @@ index 2c64164..96b27ec 100644
  		/* Set UTMI_PHY_EN and REFSEL */
  		out_be32(usb_regs + FSL_USB2_CONTROL_OFFS,
  				CONTROL_UTMI_PHY_EN | refsel);
-diff --git a/drivers/rtc/rtc-isl1208.c b/drivers/rtc/rtc-isl1208.c
-index da8beb8..2d04956 100644
 --- a/drivers/rtc/rtc-isl1208.c
 +++ b/drivers/rtc/rtc-isl1208.c
-@@ -619,7 +619,7 @@ static const struct attribute_group isl1208_rtc_sysfs_files = {
+@@ -619,7 +619,7 @@
  static int
  isl1208_probe(struct i2c_client *client, const struct i2c_device_id *id)
  {
@@ -1192,7 +1176,7 @@ index da8beb8..2d04956 100644
  	struct rtc_device *rtc;
  
  	if (!i2c_check_functionality(client->adapter, I2C_FUNC_I2C))
-@@ -657,16 +657,23 @@ isl1208_probe(struct i2c_client *client, const struct i2c_device_id *id)
+@@ -657,16 +657,23 @@
  
  	i2c_set_clientdata(client, rtc);
  
@@ -1219,4 +1203,3 @@ index da8beb8..2d04956 100644
  	rc = sysfs_create_group(&client->dev.kobj, &isl1208_rtc_sysfs_files);
  	if (rc)
  		goto exit_unregister;
--- 
